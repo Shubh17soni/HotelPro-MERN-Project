@@ -1,0 +1,1 @@
+const r=require('express').Router(); const c=require('../controllers/adminController'); const {protect,adminOnly}=require('../middleware/auth'); r.use(protect,adminOnly); r.get('/dashboard',c.dashboard); r.get('/users',c.users); r.get('/bookings',c.bookings); module.exports=r;

@@ -1,0 +1,1 @@
+const r=require('express').Router(); const c=require('../controllers/bookingController'); const {protect}=require('../middleware/auth'); r.use(protect); r.post('/',c.createBooking); r.get('/mine',c.myBookings); r.patch('/:id/cancel',c.cancelBooking); module.exports=r;

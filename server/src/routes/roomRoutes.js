@@ -1,0 +1,1 @@
+const r=require('express').Router(); const c=require('../controllers/roomController'); const {protect,adminOnly}=require('../middleware/auth'); r.get('/',c.listRooms); r.get('/:id',c.getRoom); r.post('/',protect,adminOnly,c.createRoom); r.put('/:id',protect,adminOnly,c.updateRoom); r.delete('/:id',protect,adminOnly,c.deleteRoom); module.exports=r;
